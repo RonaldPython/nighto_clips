@@ -4,9 +4,14 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 import { Toaster, toast } from 'sonner'
 
+// Update FooterProps to allow 'minimized' as a type
+// If FooterProps is imported from types, update it there. Otherwise, define it here.
+type FooterProps = {
+  user: any;
+  type?: 'desktop' | 'mobile' | 'minimized';
+};
 
-
-const Footer = ({ user, type = 'desktop'}: FooterProps) => {
+const Footer = ({ user, type = 'desktop' }: FooterProps) => {
   const router = useRouter()
 
   const handleLogout = async () => {
@@ -18,7 +23,22 @@ const Footer = ({ user, type = 'desktop'}: FooterProps) => {
       router.push("/sign-in");
     }
   };
-  
+
+  if (type === 'minimized') {
+    // Only show logout icon, centered and larger
+    return (
+      <footer className="flex flex-col items-center justify-center w-full pb-2">
+        <div
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer border border-white/20 mb-1"
+          onClick={handleLogout}
+          title="Logout"
+        >
+          <Image src="/icons/logout.svg" width={28} height={28} alt="Logout" className="invert" />
+        </div>
+        <Toaster position="top-left" richColors />
+      </footer>
+    )
+  }
 
   return (
     <footer className='footer'>
@@ -36,9 +56,6 @@ const Footer = ({ user, type = 'desktop'}: FooterProps) => {
             {user?.email}
         </p>
       </div>
-
-      
-
 
       <div className='footer_image' onClick={handleLogout}>
         <Image 

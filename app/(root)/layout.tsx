@@ -20,10 +20,10 @@ export default async function RootLayout({
 
   return (
     <main className="flex min-h-screen w-full justify-between font-inter bg-[#181A20]">
-        <Sidebar 
-        user = {loggedIn}
-        />
-        <div className="flex size-full flex-col">
+        <div className="fixed top-0 left-0 h-screen z-50 w-16 md:w-20 hidden md:block">
+          <Sidebar user={loggedIn} />
+        </div>
+        <div className="flex size-full flex-col ml-0 md:ml-16">
 
           <div className="root-layout">
             <Image  src="/icons/logo.svg" width={30} height={30} alt="menu icon"/>
