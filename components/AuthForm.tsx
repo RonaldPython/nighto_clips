@@ -73,175 +73,184 @@ const AuthForm = ({ type }: { type: string }) => {
   }
 
   return (
-    <section className='auth-form'>
-      <header className='flex flex-col gap-5 md:gap-8'>
-        <Link href="/" className='cursor-pointer items-center gap-1 flex'>
-          <Image
-            src="/icons/logo.svg"
-            width={34}
-            height={34}
-            alt='Nighto'
-          />
-          <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>
-            Nighto
-          </h1>
-        </Link>
-      </header>
+    <section className='auth-form bg-[#181A20] min-h-screen flex flex-col justify-center items-center'>
+      <div className='w-full max-w-md p-8 bg-[#181A20] rounded-xl shadow'>
+        <header className='flex flex-col items-center gap-3 md:gap-4 mb-8'>
+          <Link href="/" className='flex flex-row items-center gap-2'>
+            <Image
+              src="/icons/logo.svg"
+              width={48}
+              height={48}
+              alt='Nighto'
+              className='invert drop-shadow-[0_2px_8px_rgba(239,68,68,0.5)]'
+            />
+            <h1 className='text-3xl font-ibm-plex-serif font-extrabold text-red-500'>
+              Nighto
+            </h1>
+          </Link>
+        </header>
 
-      <Toaster position="top-left" richColors />
+        <Toaster position="top-left" richColors />
 
-      {user ? (
-        <div className='flex flex-col gap-4'>
-          {/* PlaidLink */}
-        </div>
-      ) : (
-        <>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {type === "sign-up" && (
-                <>
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <div className='form-item'>
-                        <FormLabel className='form-label'>
-                          First Name
-                        </FormLabel>
-                        <div className='flex w-full flex-col'>
-                          <FormControl>
-                            <Input
-                              placeholder='Enter Your First Name'
-                              className='input-class'
-                              {...field}
+        {user ? (
+          <div className='flex flex-col gap-4'>
+            {/* PlaidLink */}
+          </div>
+        ) : (
+          <>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                {type === "sign-up" && (
+                  <>
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <div className='form-item'>
+                          <FormLabel className='form-label text-white'>
+                            First Name
+                          </FormLabel>
+                          <div className='flex w-full flex-col'>
+                            <FormControl>
+                              <Input
+                                placeholder='Enter Your First Name'
+                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage
+                              className='form-message mt-2 text-red-400'
                             />
-                          </FormControl>
-                          <FormMessage
-                            className='form-message mt-2'
-                          />
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <div className='form-item'>
-                        <FormLabel className='form-label'>
-                          Last Name
-                        </FormLabel>
-                        <div className='flex w-full flex-col'>
-                          <FormControl>
-                            <Input
-                              placeholder='Enter Your Last Name'
-                              className='input-class'
-                              {...field}
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <div className='form-item'>
+                          <FormLabel className='form-label text-white'>
+                            Last Name
+                          </FormLabel>
+                          <div className='flex w-full flex-col'>
+                            <FormControl>
+                              <Input
+                                placeholder='Enter Your Last Name'
+                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage
+                              className='form-message mt-2 text-red-400'
                             />
-                          </FormControl>
-                          <FormMessage
-                            className='form-message mt-2'
-                          />
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="address"
-                    render={({ field }) => (
-                      <div className='form-item'>
-                        <FormLabel className='form-label'>
-                          Crypto Address
-                        </FormLabel>
-                        <div className='flex w-full flex-col'>
-                          <FormControl>
-                            <Input
-                              placeholder='Enter Your EVM (ETH, BSC, Polygon) Address'
-                              className='input-class'
-                              {...field}
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="address"
+                      render={({ field }) => (
+                        <div className='form-item'>
+                          <FormLabel className='form-label text-white'>
+                            Crypto Address
+                          </FormLabel>
+                          <div className='flex w-full flex-col'>
+                            <FormControl>
+                              <Input
+                                placeholder='Enter Your EVM (ETH, BSC, Polygon) Address'
+                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage
+                              className='form-message mt-2 text-red-400'
                             />
-                          </FormControl>
-                          <FormMessage
-                            className='form-message mt-2'
-                          />
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                </>
-              )}
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <div className='form-item'>
-                    <FormLabel className='form-label'>
-                      Email
-                    </FormLabel>
-                    <div className='flex w-full flex-col'>
-                      <FormControl>
-                        <Input
-                          placeholder='Enter Your Email'
-                          className='input-class'
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage
-                        className='form-message mt-2'
-                      />
-                    </div>
-                  </div>
+                      )}
+                    />
+                  </>
                 )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <div className='form-item'>
-                    <FormLabel className='form-label'>
-                      Password
-                    </FormLabel>
-                    <div className='flex w-full flex-col'>
-                      <FormControl>
-                        <Input
-                          placeholder='Enter Your Password'
-                          className='input-class'
-                          type='password'
-                          {...field}
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <div className='form-item'>
+                      <FormLabel className='form-label text-white'>
+                        Email
+                      </FormLabel>
+                      <div className='flex w-full flex-col'>
+                        <FormControl>
+                          <Input
+                            placeholder='Enter Your Email'
+                            className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage
+                          className='form-message mt-2 text-red-400'
                         />
-                      </FormControl>
-                      <FormMessage
-                        className='form-message mt-2'
-                      />
+                      </div>
                     </div>
-                  </div>
-                )}
-              />
-              <div className='flex flex-col gap-4'>
-                <Button type="submit" disabled={IsLoading} className='form-btn'>
-                  {IsLoading ? (
-                    <>
-                      <Loader2 size={20} className='animate-spin' /> &nbsp;
-                      Loading...
-                    </>
-                  ) : type === "sign-in" ? 'Sign In' : 'Sign Up'}
-                </Button>
-              </div>
-            </form>
-          </Form>
-          <footer className='flex justify-center gap-1'>
-            <p className='text-14 font-normal text-gray-600'>{type === 'sign-in'
-              ? "Don't have an account?"
-              : "Already have an account?"}
-            </p>
-            <Link href={type === "sign-in" ? "/sign-up" : "/sign-in"}
-              className='form-link'>
-              {type === "sign-in" ? "Sign Up" : "Sign In"}
-            </Link>
-          </footer>
-        </>
-      )}
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <div className='form-item'>
+                      <FormLabel className='form-label text-white'>
+                        Password
+                      </FormLabel>
+                      <div className='flex w-full flex-col'>
+                        <FormControl>
+                          <Input
+                            placeholder='Enter Your Password'
+                            className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                            type='password'
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage
+                          className='form-message mt-2 text-red-400'
+                        />
+                      </div>
+                    </div>
+                  )}
+                />
+                <div className='flex flex-col gap-4'>
+                  <button
+                    type="submit"
+                    disabled={IsLoading}
+                    className='w-full !bg-red-500 !text-white !font-bold !rounded-lg !py-3 !mt-2 !shadow-lg hover:!bg-red-600 transition text-base'
+                  >
+                    {IsLoading ? (
+                      <>
+                        <Loader2 size={20} className='animate-spin' /> &nbsp;
+                        Loading...
+                      </>
+                    ) : type === "sign-in" ? 'Sign In' : 'Sign Up'}
+                  </button>
+                </div>
+              </form>
+            </Form>
+            <footer className='flex justify-center gap-1'>
+              <p className='text-14 font-normal text-red-300 mt-4'>{type === 'sign-in'
+                ? "Don't have an account?"
+                : "Already have an account?"}
+              </p>
+              <Link
+                href={type === "sign-in" ? "/sign-up" : "/sign-in"}
+                className='text-red-500 !font-bold mt-4 hover:!text-red-600 transition text-base'
+              >
+                {type === "sign-in" ? "Sign Up" : "Sign In"}
+              </Link>
+            </footer>
+          </>
+        )}
+      </div>
     </section>
   )
 }
