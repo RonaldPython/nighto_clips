@@ -5,7 +5,7 @@ const TotalCompleted = ({
   names, claims, airdrops, TotalCurrentBalance
 }: TotalCompletedProps) => {
   return (
-    <section className='flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6'>
+    <section className='flex w-full items-center gap-4 rounded-xl border border-gray-500 bg-[#1e2838] p-4 shadow-chart sm:gap-6 sm:p-6'>
 
       <div className='total-balance-chart'>
         <DoughnutChart names= {names}
@@ -14,7 +14,7 @@ const TotalCompleted = ({
       </div>
 
       <div className='flex flex-col gap-6'>
-        <h2 className='header-2'>
+        <h2 className='header-2 !text-white'>
         Total Campaigns: {airdrops } 
         </h2>
 

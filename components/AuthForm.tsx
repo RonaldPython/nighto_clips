@@ -74,8 +74,8 @@ const AuthForm = ({ type }: { type: string }) => {
 
   return (
     <section className='auth-form bg-[#181A20] min-h-screen flex flex-col justify-center items-center'>
-      <div className='w-full max-w-md p-8 bg-[#181A20] rounded-xl shadow'>
-        <header className='flex flex-col items-center gap-3 md:gap-4 mb-8'>
+      <div className='w-full max-w-md p-10 bg-gradient-to-br from-[#23242a] to-[#181A20] rounded-2xl shadow-2xl border border-red-500/40'>
+        <header className='flex flex-col items-center gap-3 md:gap-4 mb-10'>
           <Link href="/" className='flex flex-row items-center gap-2'>
             <Image
               src="/icons/logo.svg"
@@ -114,7 +114,7 @@ const AuthForm = ({ type }: { type: string }) => {
                             <FormControl>
                               <Input
                                 placeholder='Enter Your First Name'
-                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-2xl text-base px-4 py-3 mb-4 transition-all duration-200'
                                 {...field}
                               />
                             </FormControl>
@@ -137,7 +137,7 @@ const AuthForm = ({ type }: { type: string }) => {
                             <FormControl>
                               <Input
                                 placeholder='Enter Your Last Name'
-                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-2xl text-base px-4 py-3 mb-4 transition-all duration-200'
                                 {...field}
                               />
                             </FormControl>
@@ -160,7 +160,7 @@ const AuthForm = ({ type }: { type: string }) => {
                             <FormControl>
                               <Input
                                 placeholder='Enter Your EVM (ETH, BSC, Polygon) Address'
-                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                                className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-2xl text-base px-4 py-3 mb-4 transition-all duration-200'
                                 {...field}
                               />
                             </FormControl>
@@ -185,7 +185,7 @@ const AuthForm = ({ type }: { type: string }) => {
                         <FormControl>
                           <Input
                             placeholder='Enter Your Email'
-                            className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                            className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-2xl text-base px-4 py-3 mb-4 transition-all duration-200'
                             {...field}
                           />
                         </FormControl>
@@ -208,7 +208,7 @@ const AuthForm = ({ type }: { type: string }) => {
                         <FormControl>
                           <Input
                             placeholder='Enter Your Password'
-                            className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-lg text-base px-4 py-2'
+                            className='bg-[#181A20] !text-white placeholder-red-300 !border !border-red-500 focus:!border-red-500 focus:!ring-2 focus:!ring-red-500 !shadow-lg rounded-2xl text-base px-4 py-3 mb-4 transition-all duration-200'
                             type='password'
                             {...field}
                           />
@@ -224,7 +224,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   <button
                     type="submit"
                     disabled={IsLoading}
-                    className='w-full !bg-red-500 !text-white !font-bold !rounded-lg !py-3 !mt-2 !shadow-lg hover:!bg-red-600 transition text-base'
+                    className='w-full !bg-red-500 !text-white !font-bold !rounded-2xl !py-3 !mt-2 !shadow-lg hover:!bg-red-600 hover:!shadow-red-500/40 transition-all duration-200 text-base ring-2 ring-transparent focus:ring-red-400 focus:ring-4'
                   >
                     {IsLoading ? (
                       <>
@@ -243,11 +243,12 @@ const AuthForm = ({ type }: { type: string }) => {
               </p>
               <Link
                 href={type === "sign-in" ? "/sign-up" : "/sign-in"}
-                className='text-red-500 !font-bold mt-4 hover:!text-red-600 transition text-base'
+                className='text-red-500 !font-bold mt-3.5 hover:!text-red-600 transition text-base'
               >
                 {type === "sign-in" ? "Sign Up" : "Sign In"}
               </Link>
             </footer>
+            <hr className='my-8 border-t border-red-500/20' />
           </>
         )}
       </div>

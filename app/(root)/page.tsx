@@ -42,11 +42,7 @@ const Home = async () => {
 
       </div>
       
-      <RightSideBar
-        user={loggedIn}
-        transactions={[]}
-        airdrops={airdropsCurrent}
-      />
+      
     </section>
   )
 }

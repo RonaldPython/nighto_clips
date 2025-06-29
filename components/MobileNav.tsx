@@ -35,71 +35,53 @@ const MobileNav = ({user}: MobileNavProps) => {
 
         </SheetTrigger>
 
-        <SheetContent side="left" className="border-none bg-white">
-            <Link href="/" className='cursor-pointer items-center gap-1 flex px-4'>
-                <Image
-            src="/icons/logo.svg"
-            width={34}
-            height={34}
-            alt='Nighto'
-            
-                />
-                <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>
-                    Nighto
-                </h1>
-            </Link>
-            <div className="mobilenav-sheet">
-
-                <SheetClose asChild>
-
-                    <nav className="flex h-full flex-col gap-6 pt-16 text-white">
-                        
-                        {sidebarLinks.map((item) => {
-
-                        const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)  
-
-                        return (
-                            <SheetClose asChild key={item.label}>
-                                <Link href={item.route} key={item.label} 
-                                    className={cn('mobilenav-sheet_close w-full', 
-                                    {'bg-bank-gradient': isActive})}>
-  
-                                    <Image 
-                                        src={item.imgURL}
-                                        alt={item.label}
-                                        
-                                        width={20}
-                                        height={20}
-                                        className={cn({
-                                            'brightness-[3] invert-0': isActive
-                                        })}
-                                    />
-
-
-                                <p className={cn(
-                                    'text-16 font-semibold text-black-2', {
-                                    'text-white': isActive
-                                    }
-
-                                    )}>
-                                    {item.label}
-                                </p>
-                                        
-                                </Link>
-                            </SheetClose>
-
-                            
-                            )
-                        })}
-
-                    </nav>
-
-                </SheetClose>
-
-                <Footer user={user} type="mobile"/>
+        <SheetContent side="left" className="border-none !bg-[#181A20] p-0 flex flex-col h-full">
+          <div className="flex flex-col items-center pt-6 pb-2">
+            <Image
+              src="/icons/logo.svg"
+              width={40}
+              height={40}
+              alt="Nighto"
+              className="invert mb-2"
+            />
+            <h1 className="text-2xl font-extrabold text-white tracking-wide mb-2">Nighto</h1>
+          </div>
+          <div className="flex flex-col h-full flex-1">
+            <SheetClose asChild>
+              <nav className="flex flex-col gap-5 px-4 pt-2">
+                {sidebarLinks.map((item) => {
+                  const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
+                  return (
+                    <SheetClose asChild key={item.label}>
+                      <Link
+                        href={item.route}
+                        className={cn(
+                          'flex items-center gap-3 px-4 py-2.5 rounded-xl font-bold text-base transition-all duration-200',
+                          {
+                            'bg-gradient-to-r from-red-800 via-red-500 to-pink-400 text-white shadow-lg scale-105': isActive,
+                            'hover:bg-[#23242a]/70 hover:text-white text-gray-300': !isActive,
+                          }
+                        )}
+                        style={isActive ? { borderLeft: '5px solid #fff' } : {}}
+                      >
+                        <Image
+                          src={item.imgURL}
+                          alt={item.label}
+                          width={22}
+                          height={22}
+                          className={cn({ 'brightness-[3] invert-0': isActive })}
+                        />
+                        <span className="font-semibold">{item.label}</span>
+                      </Link>
+                    </SheetClose>
+                  );
+                })}
+              </nav>
+            </SheetClose>
+            <div className="mt-auto pt-6 border-t border-gray-800 px-4">
+              <Footer user={user} type="mobile" />
             </div>
-
-            
+          </div>
         </SheetContent>
     </Sheet>
 

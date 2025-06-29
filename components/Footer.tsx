@@ -22,8 +22,8 @@ const Footer = ({ user, type = 'desktop'}: FooterProps) => {
 
   return (
     <footer className='footer'>
-      <div className={type === "mobile" ? 'footer_name-mobile' : 'footer_name'}>
-        <p className='text-xl font-bold text-gray-700'>
+      <div className={type === "mobile" ? 'footer_name-mobile flex items-center justify-center w-14 h-14 rounded-full bg-gray-200 border-2 border-white shadow-lg mr-4' : 'footer_name'}>
+        <p className='text-3xl font-extrabold text-gray-900'>
             {user?.name[0]}
         </p>
       </div>
