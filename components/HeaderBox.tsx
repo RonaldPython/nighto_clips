@@ -6,7 +6,7 @@ const HeaderBox = ({ type= 'title', title, subtext, user }:
       <h1 className='header-box-title'>
         {title}
         {type === 'greeting' && (
-            <span className='text-blue-700'>
+            <span className='text-red-500'>
                 &nbsp;{user}
                 
             </span>

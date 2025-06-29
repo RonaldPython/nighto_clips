@@ -13,7 +13,7 @@ const DoughnutChart = ({claims, names}: DoughnutChartProps) => {
         {
             label: "Airdrops",
             data: claims,
-            backgroundColor: ['#0747b6', '#2265d8', '#2f91fa']
+            backgroundColor: ['#b91c1c', '#ef4444', '#fca5a5']
         }
     ],
     labels: names
