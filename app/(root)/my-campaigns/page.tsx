@@ -11,11 +11,14 @@ const MyBanks = async () => {
 
   return (
     <section className='flex ' >
-      <div className="my-banks !bg-[#18181b]">
-        <HeaderBox 
+      <div className="my-banks !bg-[#18181b] ">
+        <div className='!items-center !justify-center !flex'>
+          <HeaderBox 
           title="My Campaigns"
-          subtext="Access your campaign statistics."
+          subtext=""
         />
+        </div>
+        
 
         <div className="space-y-4">
           <AirdropCardDemo />

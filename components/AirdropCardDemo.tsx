@@ -71,6 +71,36 @@ const demoCards = [
     statusColor: 'text-green-400',
     description: 'Engage with the community and earn by sharing your experiences on social media.',
   },
+  {
+    id: 8,
+    banner: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
+    title: 'Social Buzz',
+    badge: 'Social',
+    earnings: '$5.00',
+    status: 'Paid Out',
+    statusColor: 'text-green-400',
+    description: 'Engage with the community and earn by sharing your experiences on social media.',
+  },
+  {
+    id: 9,
+    banner: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
+    title: 'Social Buzz',
+    badge: 'Social',
+    earnings: '$5.00',
+    status: 'Paid Out',
+    statusColor: 'text-green-400',
+    description: 'Engage with the community and earn by sharing your experiences on social media.',
+  },
+  {
+    id: 10,
+    banner: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
+    title: 'Social Buzz',
+    badge: 'Social',
+    earnings: '$5.00',
+    status: 'Paid Out',
+    statusColor: 'text-green-400',
+    description: 'Engage with the community and earn by sharing your experiences on social media.',
+  }
 ];
 
 const AirdropCardDemo = () => {

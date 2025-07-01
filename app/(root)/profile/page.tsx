@@ -8,11 +8,15 @@ const RegisterAirdrop = async () => {
   const loggedIn = await getLoggedInUser();
 
   return (
-    <section className="payment-transfer min-h-screen" style={{ background: '#18181b', minHeight: '100vh' }}>
-      <HeaderBox 
+    <section className="payment-transfer min-h-screen " style={{ background: '#18181b', minHeight: '100vh' }}>
+      <div className='!items-center !justify-center !flex'>
+        <HeaderBox 
         title="Profile Statistics"
         subtext="Access your profile statistics and manage your account settings."
+        
       />
+      </div>
+      
 
       <section className="flex flex-col items-center pb-8 mt-6">
         <div
@@ -48,9 +52,9 @@ const RegisterAirdrop = async () => {
           <BarChart3 className="h-6 w-6 text-red-400" />
           Statistics
         </h2>
-        <div className="flex flex-row gap-8 justify-center">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center md:items-stretch">
           {/* Total Videos Card */}
-          <div className="w-80">
+          <div className="w-full md:w-80">
             <div className="relative group bg-[#23242a] rounded-xl p-6 shadow-lg shadow-black/30 transition-transform hover:scale-105 cursor-pointer border border-gray-700">
               <span className="text-gray-300 text-sm flex items-center gap-2">Total videos
                 <Video className="inline ml-1 text-red-400" size={20} strokeWidth={2} />
@@ -60,7 +64,7 @@ const RegisterAirdrop = async () => {
             </div>
           </div>
           {/* Money Earned Card */}
-          <div className="w-80">
+          <div className="w-full md:w-80">
             <div className="relative group bg-[#23242a] rounded-xl p-6 shadow-lg shadow-black/30 transition-transform hover:scale-105 cursor-pointer border border-gray-700">
               <span className="text-gray-300 text-sm flex items-center gap-2">Money earned
                 <DollarSign className="inline ml-1 text-red-400" size={20} strokeWidth={2} />
@@ -70,7 +74,7 @@ const RegisterAirdrop = async () => {
             </div>
           </div>
           {/* Total Views Card */}
-          <div className="w-80">
+          <div className="w-full md:w-80">
             <div className="relative group bg-[#23242a] rounded-xl p-6 shadow-lg shadow-black/30 transition-transform hover:scale-105 cursor-pointer border border-gray-700">
               <span className="text-gray-300 text-sm flex items-center gap-2">Total views
                 <Eye className="inline ml-1 text-red-400" size={20} strokeWidth={2} />
@@ -85,7 +89,7 @@ const RegisterAirdrop = async () => {
       {/* Payment & Password Section */}
       <section className="mt-16 w-full max-w-5xl mx-auto flex flex-col md:flex-row gap-8">
         {/* Payment Information */}
-        <div className="flex-1 bg-[#23242a] rounded-2xl p-8 shadow-xl shadow-black/30 border-t-4 border-red-500">
+        <div className="w-full md:flex-1 bg-[#23242a] rounded-2xl p-8 shadow-xl shadow-black/30 border-t-4 border-red-500">
           <div className="flex items-center gap-3 mb-4">
             <div className="bg-red-900 rounded-full p-2">
               <Coins className="w-8 h-8 text-red-400" />
@@ -117,7 +121,7 @@ const RegisterAirdrop = async () => {
           </form>
         </div>
         {/* Change Password */}
-        <div className="flex-1 bg-[#23242a] rounded-2xl p-8 shadow-xl shadow-black/30 border-t-4 border-red-500">
+        <div className="w-full md:flex-1 bg-[#23242a] rounded-2xl p-8 shadow-xl shadow-black/30 border-t-4 border-red-500">
           <h3 className="text-xl font-bold text-white mb-4">Change Password</h3>
           <form className="flex flex-col gap-4 mt-2">
             <input

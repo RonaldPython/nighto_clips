@@ -19,6 +19,11 @@ export const sidebarLinks = [
     route: "/profile",
     label: "Profile Statistics",
   },
+  {
+    imgURL: "/icons/socials.svg",
+    route: "/socials",
+    label: "Socials",
+  },
 ];
 
 // good_user / good_password - Bank of America
